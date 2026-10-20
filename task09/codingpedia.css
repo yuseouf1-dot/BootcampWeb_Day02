@@ -1,0 +1,186 @@
+html {
+    background-color: white;
+}
+
+body {
+    background-color: grey;
+    margin: 8px;
+    padding: 2px 2px 20px 2px;
+    border-radius: 0 0 20px 20px;
+    font-size: 14px;
+}
+
+.box {
+    border: 2px solid black;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+}
+
+/* Header: title / navigation with a 5 to 1 ratio */
+header {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.4em;
+    margin: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    margin: 8px 0;
+    padding: 0;
+}
+
+nav a {
+    padding: 0 10px;
+    font-size: 0.85em;
+}
+
+nav a:hover {
+    background-color: cornflowerblue;
+}
+
+/* Content: main 80% / aside 20% */
+.content {
+    display: flex;
+    align-items: stretch;
+}
+
+main {
+    flex: 0 0 80%;
+    box-sizing: border-box;
+    padding-bottom: 5px;
+}
+
+aside {
+    flex: 1;
+    font-size: 0.85em;
+}
+
+main > .box {
+    font-size: 0.85em;
+}
+
+main h2 {
+    font-size: 1.2em;
+}
+
+/* Form: labels on the left, fields on the right */
+form {
+    padding: 5px 0;
+}
+
+form p {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 4px 0;
+}
+
+form input,
+form select,
+form textarea {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+form button {
+    grid-column: 2;
+    width: 100%;
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    border: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+legend {
+    float: left;
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0;
+}
+
+fieldset label[for="male"] {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+fieldset #male {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+fieldset label[for="female"] {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+fieldset #female {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+input[type="color"] {
+    width: 40px;
+}
+
+/* Footer: one centered line in italic */
+footer address {
+    text-align: center;
+    font-size: 0.8em;
+    margin: 4px 0;
+}
+
+footer address p {
+    display: inline;
+    margin: 0;
+}
+
+footer address p + p::before {
+    content: " - ";
+}
+
+/* Task08 animation */
+.moving_square {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 10px 10px 310px 10px;
+    animation: move_square 5s linear 5;
+}
+
+@keyframes move_square {
+    0% {
+        transform: translate(0, 0);
+        background-color: red;
+    }
+    25% {
+        transform: translate(0, 300px);
+        background-color: green;
+    }
+    50% {
+        transform: translate(300px, 300px);
+        background-color: blue;
+    }
+    75% {
+        transform: translate(300px, 0);
+        background-color: yellow;
+    }
+    100% {
+        transform: translate(0, 0);
+        background-color: red;
+    }
+}
